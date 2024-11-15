@@ -52,4 +52,3 @@ const user1 = 3,
     user2 = 3;
 
     console.log(user1 !== user2);
-
