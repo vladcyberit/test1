@@ -142,8 +142,15 @@ let guest;
 // }
 // while (hamburger >= 1);
 
+//COUS - Complete order ussuing system
+
 // for (let h = 3; h >= 1; h--) {
 //     guest = prompt("Ваше имя, Сер?", "");
+//     if (!guest) {
+//         h++;
+//         alert("Введите, пожалуйста, ваше имя");
+//         continue;
+//     }
 //     alert(`Номер вашего заказа: ${hamburger*13}. Ожидайте!`);
 //     alert(`Ваш заказ готов, ${guest}. Приятного аппетита!`);
 //     hamburger--;
@@ -153,4 +160,5 @@ let guest;
 //     }
 //     alert(`Подходите к касе, осталось ${hamburger} бургеров`);
 // }
+
 
