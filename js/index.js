@@ -51,4 +51,106 @@ console.log(5 % 2 === "1");
 const user1 = 3,
     user2 = 3;
 
-    console.log(user1 !== user2);
+console.log(user1 !== user2);
+
+
+if (3) {
+        console.log("OK!");
+    } else {
+        console.log("wrong");
+    }
+
+
+// const diskSpace = +prompt("Кількість вільного місця на вашому девайсі", "");
+// if (diskSpace > 128) {
+//     console.log("Ваш пристрій має багато вільного місця");
+// } else if (diskSpace > 32) {
+//     console.log("Ваш пристрій має достатньо вільного місця")
+// } else if (diskSpace > 16) {
+//     console.log("У вашому сховищі закінчується вільне місце. Попіклуйтесь заздалегідь");
+// } else {
+//     console.log("Придбайте iCloud, щоб розширити сховище!");
+// }
+
+// (diskSpace > 128) ? console.log("Ваш пристрій має багато вільного місця") :
+// (diskSpace > 32) ? console.log("Ваш пристрій має достатньо вільного місця") :
+// (diskSpace > 16) ? console.log("У вашому сховищі закінчується вільне місце. Попіклуйтесь заздалегідь") :
+// console.log("Придбайте iCloud, щоб розширити сховище!");
+
+// switch (diskSpace) {
+//     case 128:
+//         alert("Ваш пристрій має багато вільного місця");
+//         break;
+//     case 32:
+//         alert("Ваш пристрій має достатньо вільного місця");
+//         break;
+//     case 16:
+//         alert("У вашому сховищі закінчується вільне місце. Попіклуйтесь заздалегідь");
+//         break;
+//     default:
+//         alert("Придбайте iCloud, щоб розширити сховище!");
+//         break;
+// }
+
+// const hamburger = 10;
+// const fries = 3;
+// const cola = 0;
+
+// if (hamburger && fries && cola) {
+//     console.log("Я наївся");
+// }
+
+// console.log((hamburger && fries && cola));
+
+// const hamburger = 3;
+// const potato = 20;
+// const cola = 10;
+// const meet = true;
+// const chicken = 1;
+
+
+// console.log(hamburger >= 3 && cola && potato);
+
+// (hamburger >= 3 && cola >= 1 && potato >= 1) ? console.log("остаемся здесь!") : console.log("Уходим!");
+
+// (hamburger || potato || cola && meet) ? console.log("Встреча состоялась") : console.log("Ушли домой");
+// // console.log(hamburger || potato || cola);
+
+// (hamburger >= 3 && cola >= 2 || potato && chicken >= 1) ? console.log("Готовь кошелек") : console.log("Сегодня кушаем дома!");
+// console.log(hamburger >= 3 && cola >= 2 || potato && chicken);
+// console.log( 5 === 5 && 3 > 1 || 5);
+
+let hamburger = 3;
+let guest;
+
+// while (hamburger >= 1) {
+//     guest = prompt("Ваше имя, Сер?", "");
+//     hamburger--;
+//     alert(`Ваш заказ готов, ${guest}. Приятного аппетита!`);
+//     alert(`Подходите к касе, осталось ${hamburger} бургеров`);
+// }
+
+// if (hamburger == 0) {
+//     alert("Бургеров нет в наличии! Подождите")
+// }
+
+// do {
+//     guest = prompt("Ваше имя, Сер?", "");
+//     hamburger--;
+//     alert(`Ваш заказ готов, ${guest}. Приятного аппетита!`);
+//     alert(`Подходите к касе, осталось ${hamburger} бургеров`);
+// }
+// while (hamburger >= 1);
+
+// for (let h = 3; h >= 1; h--) {
+//     guest = prompt("Ваше имя, Сер?", "");
+//     alert(`Номер вашего заказа: ${hamburger*13}. Ожидайте!`);
+//     alert(`Ваш заказ готов, ${guest}. Приятного аппетита!`);
+//     hamburger--;
+//     if (hamburger === 0) {
+//             alert("Бургеров нет в наличии! Подождите");
+//             break;
+//     }
+//     alert(`Подходите к касе, осталось ${hamburger} бургеров`);
+// }
+
