@@ -161,4 +161,125 @@ let guest;
 //     alert(`Подходите к касе, осталось ${hamburger} бургеров`);
 // }
 
+// for (let i = 3; i < 10; i++) {
+//     console.log(i);
+//     for (let j = 5; j < 15; j++) {
+//         console.log(j);
+//     }
+// }
 
+// let result = "";
+// const length = 7;
+
+// for (let i = 1; i < length; i++) {
+
+//     for (let j = 0; j < i; j++) {
+//         result += "*";
+//     }
+//     result += "\n";
+// }
+
+// console.log(result);
+
+
+// let result = "";
+// const length = 2;
+// const upperLength = 7;
+// const lowerLength = 0;
+
+// for (let i = 1; i < length; i++) {
+//     for (let j = 1; j < upperLength; j++) {
+//         for (let k = 0; k < j; k++) {
+//             result += "*";
+//         }
+//             result += "\n";
+//     }
+
+//     for (let l = 6; l > lowerLength; l--) {
+//         for (let m = 0; m < l; m++) {
+//             result += "*";
+//         }
+//         result += "\n";
+//     }
+//     console.log(result);
+// }
+
+// first: for (let i = 0; i <= 2; i++) {
+//     console.log(`First level ${i}`);
+//     for (let j = 0; j <= 2; j++) {
+//         console.log(`Second level ${j}`);
+//         for (let k = 0; k <= 2; k++) {
+//             if (k === 1) continue first;
+//             console.log(`Third level ${k}`);
+//         }
+//     }
+// }
+
+// const arrayOfNumbers = [];
+// for (let i = 5; i <= 10; i++) {
+//     if (i === 5) {
+//         arrayOfNumbers[0] = i;
+//     } else if (i === 6) {
+//         arrayOfNumbers[1] = i;
+//     } else if (i === 7) {
+//         arrayOfNumbers[2] = i;
+//     } else if (i === 8) {
+//         arrayOfNumbers[3] = i;
+//     } else if (i === 9) {
+//         arrayOfNumbers[4] = i;
+//     } else {
+//         arrayOfNumbers[5] = i;
+//     }
+// }
+// console.log(arrayOfNumbers);
+
+// for (let i = 5; i <= 10; i++) {
+//     arrayOfNumbers[i - 5] = i;
+// }
+// console.log(arrayOfNumbers);
+
+// const arr1 = [3, 5, 8, 16, 20, 23, 50];
+// const result = [];
+// const arrLength = 7;
+
+// for (let i = 0; i < arrLength; i++) {
+//     result[i] = arr1[i];
+// }
+// console.log(result);
+
+
+
+// for (let i = 0; i < 5; i++) {
+//     // typeof data[i];
+//     if (typeof data[i] === "number") {
+//         data[i] = data[i] * 2;
+//     } else {
+//         data[i] += " - done";
+//     }
+// }
+// console.log(data);
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
+// const result1 = [];
+// console.log(data.length);
+
+// for (let i = 5; i > 0; i--) {
+//     result1[data.length - i] = data[i - 1];
+// }
+// console.log(result1);
+
+// let result = "";
+// const lines = 6;
+
+// for (let i = 1; i <= lines; i ++) {
+
+//     for (let l = 0; l < lines - i; l++) {
+//         result += " ";
+//     }
+
+//     for (let k = 0; k < 2 * i - 1; k++) {
+//         result += "*";
+//     }
+//     result += "\n";
+// }
+
+// console.log(result);
