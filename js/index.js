@@ -60,7 +60,6 @@ if (3) {
         console.log("wrong");
     }
 
-
 // const diskSpace = +prompt("Кількість вільного місця на вашому девайсі", "");
 // if (diskSpace > 128) {
 //     console.log("Ваш пристрій має багато вільного місця");
@@ -283,3 +282,40 @@ let guest;
 // }
 
 // console.log(result);
+// let num = 0;
+
+// function showFirstBonus(name) {
+//     console.log("Congratulations " + name + "! You receive 10% on all items in our shop");
+//     console.log(num);
+// }
+
+// showFirstBonus("Kod");
+// console.log(num);
+
+function calc(a, b) {
+    return (a + b);
+}
+
+const calcResult = calc(4, 3);
+console.log(calcResult);
+//    АБО!
+console.log(calc(4, 3));
+
+let money = 20;
+
+function ret() {
+    let money = 50;
+    return money;
+}
+
+const moreMoney = ret();
+console.log(moreMoney);
+
+const logger = function() {
+    console.log("Hello");
+};
+
+logger();
+
+const calc1 = (a, b) => a + b;
+console.log(calc1(9, 12));
