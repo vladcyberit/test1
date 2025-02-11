@@ -292,30 +292,48 @@ let guest;
 // showFirstBonus("Kod");
 // console.log(num);
 
-function calc(a, b) {
-    return (a + b);
+// function calc(a, b) {
+//     return (a + b);
+// }
+
+// const calcResult = calc(4, 3);
+// console.log(calcResult);
+// //    АБО!
+// console.log(calc(4, 3));
+
+// let money = 20;
+
+// function ret() {
+//     let money = 50;
+//     return money;
+// }
+
+// const moreMoney = ret();
+// console.log(moreMoney);
+
+// const logger = function() {
+//     console.log("Hello");
+// };
+
+// logger();
+
+// const calc1 = (a, b) => a + b;
+// console.log(calc1(9, 12));
+
+const usdToUah = 43.3;
+const eurToUah = 33.5;
+const poundToUah = 50.5;
+
+const currUah = " UAH";
+const currEuro = " EURO";
+const currPound = " POUND";
+const currUsd = " USD";
+
+
+function convert(amount, currTypeIn, curr, currTypeOut) {
+    console.log(amount + currTypeIn + ": " + curr * amount + currTypeOut);
 }
 
-const calcResult = calc(4, 3);
-console.log(calcResult);
-//    АБО!
-console.log(calc(4, 3));
-
-let money = 20;
-
-function ret() {
-    let money = 50;
-    return money;
-}
-
-const moreMoney = ret();
-console.log(moreMoney);
-
-const logger = function() {
-    console.log("Hello");
-};
-
-logger();
-
-const calc1 = (a, b) => a + b;
-console.log(calc1(9, 12));
+convert(23, currUsd, usdToUah, currUah);
+convert(45, currEuro, eurToUah, currUah);
+convert(190, currPound, poundToUah, currUah);
