@@ -359,13 +359,13 @@ const currUsd = "USD";
 const discount = 1.1;
 
 function convert(amount, currTypeIn, curr, currTypeOut) {
-    const result = curr * amount;
+    const result = Number((curr * amount).toFixed(2));
     console.log(`${Number(amount).toFixed(2)} ${currTypeIn}: ${result.toLocaleString("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currTypeOut}`);
     return [result, currTypeOut];
 }
 
 function promo([result, currency]) {
-    const promoResult = result * discount;
+    const promoResult = Number((result * discount).toFixed(2));
     console.log(`Отримайте вигідний курс за підписку на наш Telegram/Instagram: ${promoResult.toLocaleString("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currency} 💰`);
 }
 
