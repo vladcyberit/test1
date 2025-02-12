@@ -320,20 +320,53 @@ let guest;
 // const calc1 = (a, b) => a + b;
 // console.log(calc1(9, 12));
 
+// const usdToUah = 43.3;
+// const eurToUah = 33.5;
+// const poundToUah = 50.5;
+
+// const currUah = "UAH";
+// const currEuro = "EURO";
+// const currPound = "POUND";
+// const currUsd = "USD";
+
+// const discount = 1.1;
+
+// function convert(amount, currTypeIn, curr, currTypeOut) {
+//     const result = (curr * amount).toFixed(2);
+//     console.log(`${Number(amount).toFixed(2)} ${currTypeIn}: ${Number(result).toLocaleString("ru-RU", { minimumFractionDigits: 2 })} ${currTypeOut}`);
+//     return [Number(result), currTypeOut];
+// }
+
+// function promo([result, currency]) {
+//     const promoResult = (result * discount).toFixed(2);
+//     console.log(`Отримайте вигідний курс за підписку на наш Telegram/Instagram: ${Number(promoResult).toLocaleString("ru-RU", { minimumFractionDigits: 2 })} ${currency} 💰`);
+// }
+
+// promo(convert(23, currUsd, usdToUah, currUah));
+// convert(23, currUsd, usdToUah, currUah);
+// convert(45, currEuro, eurToUah, currUah);
+// convert(190, currPound, poundToUah, currUah);
+
 const usdToUah = 43.3;
 const eurToUah = 33.5;
 const poundToUah = 50.5;
 
-const currUah = " UAH";
-const currEuro = " EURO";
-const currPound = " POUND";
-const currUsd = " USD";
+const currUah = "UAH";
+const currEuro = "EURO";
+const currPound = "POUND";
+const currUsd = "USD";
 
+const discount = 1.1;
 
 function convert(amount, currTypeIn, curr, currTypeOut) {
-    console.log(amount + currTypeIn + ": " + curr * amount + currTypeOut);
+    const result = curr * amount;
+    console.log(`${Number(amount).toFixed(2)} ${currTypeIn}: ${result.toLocaleString("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currTypeOut}`);
+    return [result, currTypeOut];
 }
 
-convert(23, currUsd, usdToUah, currUah);
-convert(45, currEuro, eurToUah, currUah);
-convert(190, currPound, poundToUah, currUah);
+function promo([result, currency]) {
+    const promoResult = result * discount;
+    console.log(`Отримайте вигідний курс за підписку на наш Telegram/Instagram: ${promoResult.toLocaleString("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currency} 💰`);
+}
+
+promo(convert(23, currUsd, usdToUah, currUah));
