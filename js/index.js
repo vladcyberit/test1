@@ -356,11 +356,11 @@ const currEuro = "EURO";
 const currPound = "POUND";
 const currUsd = "USD";
 
-const discount = 1.1;
+const discount = 1.05;
 
 function convert(amount, currTypeIn, curr, currTypeOut) {
     const result = Number((curr * amount).toFixed(2));
-    console.log(`${Number(amount).toFixed(2)} ${currTypeIn}: ${result.toLocaleString("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currTypeOut}`);
+    console.log(`${amount.toLocaleString("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currTypeIn}: ${result.toLocaleString("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currTypeOut}`);
     return [result, currTypeOut];
 }
 
@@ -369,4 +369,4 @@ function promo([result, currency]) {
     console.log(`Отримайте вигідний курс за підписку на наш Telegram/Instagram: ${promoResult.toLocaleString("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currency} 💰`);
 }
 
-promo(convert(23, currUsd, usdToUah, currUah));
+promo(convert(23.10, currUsd, usdToUah, currUah));
