@@ -369,4 +369,7 @@ function promo([result, currency]) {
     console.log(`Отримайте вигідний курс за підписку на наш Telegram/Instagram: ${promoResult.toLocaleString("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currency} 💰`);
 }
 
-promo(convert(23.10, currUsd, usdToUah, currUah));
+promo(convert(1000.55, currUsd, usdToUah, currUah));
+// АБО!
+const res = convert(1000.55, currUsd, usdToUah, currUah);
+promo(res);
