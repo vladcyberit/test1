@@ -143,17 +143,16 @@ let guest;
 
 //COUS - Complete order ussuing system
 
-// for (let h = 3; h >= 1; h--) {
+// for (; hamburger > 0; hamburger--) {
 //     guest = prompt("Ваше имя, Сер?", "");
 //     if (!guest) {
-//         h++;
 //         alert("Введите, пожалуйста, ваше имя");
 //         continue;
 //     }
 //     alert(`Номер вашего заказа: ${hamburger*13}. Ожидайте!`);
 //     alert(`Ваш заказ готов, ${guest}. Приятного аппетита!`);
-//     hamburger--;
-//     if (hamburger === 0) {
+//     // hamburger--;
+//     if (hamburger === 1) {
 //             alert("Бургеров нет в наличии! Подождите");
 //             break;
 //     }
@@ -373,3 +372,15 @@ promo(convert(1000.55, currUsd, usdToUah, currUah));
 // АБО!
 const res = convert(1000.55, currUsd, usdToUah, currUah);
 promo(res);
+
+function test() {
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+        if (i === 4) return;
+    }
+    console.log("Done");
+}
+test();
+
+function doNothing() {}
+console.log(doNothing() === undefined);
