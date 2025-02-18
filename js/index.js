@@ -373,14 +373,32 @@ promo(convert(1000.55, currUsd, usdToUah, currUah));
 const res = convert(1000.55, currUsd, usdToUah, currUah);
 promo(res);
 
-function test() {
-    for (let i = 0; i < 5; i++) {
-        console.log(i);
-        if (i === 4) return;
-    }
-    console.log("Done");
-}
-test();
+// function test() {
+//     for (let i = 0; i < 5; i++) {
+//         console.log(i);
+//         if (i === 4) return;
+//     }
+//     console.log("Done");
+// }
+// test();
 
-function doNothing() {}
-console.log(doNothing() === undefined);
+// function doNothing() {}
+// console.log(doNothing() === undefined);
+
+// function returnNeighboringNumbers(b) {
+//     return [b - 1, b, b + 1];
+// }
+// console.log(returnNeighboringNumbers(5));
+
+// function getMathResult(a, b) {
+//     if (typeof b !== "number" || b <= 0) {
+//         return a;
+//     }
+//     let result = "";
+//     for (let i = 1; i <= b; i++) {
+//         result += a * i;
+//         if (i < b) result += "---";
+//     }
+//     console.log(result);
+// }
+// console.log(getMathResult(3, 5));
