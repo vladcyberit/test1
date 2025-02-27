@@ -402,3 +402,87 @@ promo(res);
 //     console.log(result);
 // }
 // console.log(getMathResult(3, 5));
+
+const str = "Jesus Christ is the Lord";
+console.log(str.slice(-18, -12));
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.slice(1, 4));
+console.log(str.substr(6, 6));
+
+const number = 100.5;
+console.log(Math.round(12.3));
+
+const size = "12.6px";
+console.log(parseFloat(size));
+console.log(1.e6);
+console.log("Completed: " + 1e-3 + "s.");
+
+// function calculateVolumeAndArea(edgeLength) {
+//     const powerVolume = Math.pow(edgeLength, 3);
+//     const powerArea = Math.pow(edgeLength, 2);
+//     console.log(`Объем куба: ${powerVolume}, площадь всей поверхности: ${6 * powerArea}`);
+//     return (`Объем куба: ${powerVolume}, площадь всей поверхности: ${6 * powerArea}`);
+// }
+// calculateVolumeAndArea(4);
+
+function calculateVolumeAndArea(edgeLength) {
+    const powerVolume = Math.pow(edgeLength, 3);
+    const powerArea = Math.pow(edgeLength, 2);
+    if (edgeLength && !isNaN(edgeLength) && edgeLength > 0 && Number.isInteger(edgeLength)) {
+        console.log(`Объем куба: ${powerVolume}, площадь всей поверхности: ${6 * powerArea}`);
+        return (`Объем куба: ${powerVolume}, площадь всей поверхности: ${6 * powerArea}`);
+    } else {
+        console.log('При вычислении произошла ошибка');
+        return ('При вычислении произошла ошибка');
+    }
+    
+}
+calculateVolumeAndArea(7);
+
+function getCoupeNumber(placeNum) {
+    if (isNaN(placeNum) || placeNum < 0 || !Number.isInteger(placeNum)) {
+        console.log("Ошибка. Проверьте правильность введенного номера места");
+        return ("Ошибка. Проверьте правильность введенного номера места");
+    } else if (placeNum === 0 || placeNum > 36) {
+        console.log("Таких мест в вагоне не существует");
+        return("Таких мест в вагоне не существует");
+    } else {
+        let coupeNum = Math.ceil(placeNum / 4);
+        console.log(`------------------\nВаше мeсто: ${placeNum}\nНомер вашего купе: ${coupeNum}\n------------------`);
+        return(coupeNum);
+    }
+}
+getCoupeNumber(30);
+
+function getTimeFromMinutes(input) {
+    if (isNaN(input) || input < 0 || !Number.isInteger(input) || input > 600) {
+        console.log("Ошибка, проверьте данные");
+        return "Ошибка, проверьте данные";
+    }
+    let nameHour = "час";
+    let nameMinutes = "минут";
+    let hours = Math.floor(input / 60);
+    let minutes = input % 60;
+    if (hours === 0 || hours >= 5) {
+        nameHour = "часов";
+    } else if (hours >= 2 && hours <= 4) {
+        nameHour = "часа";
+    } else {
+        nameHour = "час";
+    }
+    console.log(`Это ${hours} ${nameHour} и ${minutes} ${nameMinutes}`);
+    return `Это ${hours} ${nameHour} и ${minutes} ${nameMinutes}`;
+}
+getTimeFromMinutes(50);
+
+function findMaxNumber(a, b, c, d) {
+    if (typeof a !== "number" || typeof b !== "number" || typeof c !== "number" || typeof d !== "number" || arguments.length < 4) {
+        console.log(0);
+        return 0;
+    }
+    let maxNum = Math.max(a, b, c, d);
+    console.log(maxNum);
+    return maxNum;
+}
+
+findMaxNumber();
