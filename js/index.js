@@ -486,3 +486,31 @@ function findMaxNumber(a, b, c, d) {
 }
 
 findMaxNumber();
+
+function first (language, callback) {
+    setTimeout(function() {
+        console.log(`Я учу: ${language}`);
+        callback();
+    }, 500);
+    
+}
+
+function second() {
+    console.log("Я выучил этот язык");
+}
+
+first("React", second);
+// АБО
+first("React", function() {
+    console.log("Я выучил этот язык");
+});
+
+
+// function learnJS(lang, callback) {
+//     console.log(`Я учу: ${lang}`);
+//     callback();
+// }
+
+// learnJS("JavaScript", function() {
+//     console.log("Я выучил этот язык");
+// });
