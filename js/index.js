@@ -487,23 +487,23 @@ function findMaxNumber(a, b, c, d) {
 
 findMaxNumber();
 
-function first (language, callback) {
-    setTimeout(function() {
-        console.log(`Я учу: ${language}`);
-        callback();
-    }, 500);
+// function first (language, callback) {
+//     setTimeout(function() {
+//         console.log(`Я учу: ${language}`);
+//         callback();
+//     }, 500);
     
-}
+// }
 
-function second() {
-    console.log("Я выучил этот язык");
-}
+// function second() {
+//     console.log("Я выучил этот язык");
+// }
 
-first("React", second);
-// АБО
-first("React", function() {
-    console.log("Я выучил этот язык");
-});
+// first("React", second);
+// // АБО
+// first("React", function() {
+//     console.log("Я выучил этот язык");
+// });
 
 
 // function learnJS(lang, callback) {
@@ -514,3 +514,43 @@ first("React", function() {
 // learnJS("JavaScript", function() {
 //     console.log("Я выучил этот язык");
 // });
+
+const options = {
+    name: "test",
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: "black",
+        bg: "red",
+        bg2: "red",
+        bg3: "red",
+        bg4: "red1",
+    },
+    makeTest: function() {
+        console.log("Test");
+    }
+};
+
+// console.log(options.colors.bg);
+// delete options.colors.bg;
+// console.log(options);
+
+// let counter = 0;
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let keyIn in options[key]) {
+//             console.log(`свойство ${keyIn} имеет значение ${options[key][keyIn]}`);
+//             counter++;
+//         } 
+//     } else {
+//         console.log(`свойство ${key} имеет значение ${options[key]}`);
+//         counter++;
+//     }
+// }
+// console.log(counter);
+
+// console.log(Object.keys(options).length);
+// options.makeTest();
+
+const {border, bg, bg2, bg4} = options.colors;
+console.log(bg4);
