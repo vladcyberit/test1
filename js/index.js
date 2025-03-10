@@ -554,3 +554,38 @@ const options = {
 
 const {border, bg, bg2, bg4} = options.colors;
 console.log(bg4);
+
+const books = [1, 2, 5, 8, 12];
+console.log(books.push(1, 2, "45"));
+console.log(books[2]);
+
+for (let i = 0; i < books.length; i++) {
+    console.log(books[i]);
+}
+
+for (let value of books) {
+    console.log(value);
+}
+
+books.forEach(function(item, jkj, bookjo) {
+    console.log(`${item} месте ${jkj} в массиве ${bookjo}`);
+});
+
+const product = ["Яблоки", "Молоко", "Хлеб", "Сыр", "Помидоры", "Огурцы", "Картофель", "Морковь", "Курица", "Рис"];
+const prodOrg = product.join("--");
+console.log(prodOrg);
+
+const prodOrg1 = prodOrg.split("---");
+console.log(prodOrg1);
+
+const abc = ["a", "k", "j", "b", "d", "c"];
+const numberss = [1, 9, 0, 4, 3, 7, 8, 5];
+const numbersss = [1, 9, 10, 20, 23, 111, 124, 10032, 17];
+
+console.log(abc.sort());
+console.log(numberss.sort(compareNum));
+console.log(numbersss.sort(compareNum));
+
+function compareNum(a, b) {
+    return b - a;
+}
