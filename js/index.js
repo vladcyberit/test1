@@ -575,7 +575,7 @@ const product = ["Яблоки", "Молоко", "Хлеб", "Сыр", "Поми
 const prodOrg = product.join("--");
 console.log(prodOrg);
 
-const prodOrg1 = prodOrg.split("---");
+const prodOrg1 = prodOrg.split("--");
 console.log(prodOrg1);
 
 const abc = ["a", "k", "j", "b", "d", "c"];
@@ -589,3 +589,69 @@ console.log(numbersss.sort(compareNum));
 function compareNum(a, b) {
     return b - a;
 }
+
+let names = "Александр Иванов, Владислав Чосенко, Дмитрий Смирнов, Михаил Кузнецов, Сергей Попов, Андрей Васильев, Евгений Петров, Владимир Соколов, Игорь Михайлов, Алексей Фёдоров, Николай Морозов, Артём Новиков, Олег Павлов, Павел Соловьёв, Василий Васильев, Виктор Зайцев, Роман Павлов, Антон Семёнов, Григорий Голубев, Степан Воробьёв, Тимофей Козлов";
+let namesDB = names.split(", ");
+console.log(namesDB);
+namesDB = namesDB.sort();
+console.log(namesDB);
+
+//Binary search v1.0.0
+
+// function binary_search(DB, name) {
+//     //Снизу переменные с числами, которые помогут обращаться к нужным индексам в массиве
+//     let low = 0;
+//     let high = DB.length - 1;
+
+//     while (low <= high) {
+//         let mid = Math.floor((low + high) / 2);
+//         let guess = DB[mid];
+
+//         if (guess == name) {
+//             console.log("Вход выполнен успешно");
+//             return mid;
+//         } else if (guess < name) {
+//             low = mid + 1;
+//         } else {
+//             high = mid - 1;
+//         }
+//     }
+//     console.log("Неверные данные пользователя. Попробуйте позже.");
+//     return -1;
+// }
+
+// binary_search(namesDB, "Джексон");
+
+//Binary search v1.0.1
+
+function binary_search(DB, name1, name2) {
+    //Снизу переменные с числами, которые помогут обращаться к нужным индексам в массиве
+    let fullName = `${name1} ${name2}`;
+    let low = 0;
+    let high = DB.length - 1;
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        let guess = DB[mid];
+
+        if (guess == fullName) {
+            console.log("Вход выполнен успешно");
+            alert("Вход выполнен успешно");
+            //DEV отчёт по работе ф-и
+            alert(`Поиск в массиве из ${DB.length} элементов занял ${Math.ceil(Math.log2(DB.length))} шагов`);
+            return mid;
+        } else if (guess < fullName) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+
+    console.log("Неверные данные пользователя. Попробуйте позже.");
+    alert("Неверные данные пользователя. Попробуйте позже.");
+    return -1;
+}
+
+// binary_search(namesDB, prompt("Введите ваше полное имя", ""), prompt("Введите вашу фамилию", ""));
+
+console.log(Math.ceil(Math.log2(4000000000)));
