@@ -654,4 +654,100 @@ function binary_search(DB, name1, name2) {
 
 // binary_search(namesDB, prompt("Введите ваше полное имя", ""), prompt("Введите вашу фамилию", ""));
 
-console.log(Math.ceil(Math.log2(4000000000)));
+console.log(Math.ceil(Math.log2(4e9)));
+
+const obj = {
+    a: 5,
+    b: 10,
+    c: {
+        j: 120,
+        k: 130,
+    },
+};
+
+// const copyObj = obj;
+
+// copyObj.a = 100;
+
+// console.log(obj);
+// console.log(copyObj);
+
+//Копирование через цыкл
+function copy(mainObj) {
+    let objCopy = {};
+    let key;
+
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+
+    return objCopy;
+}
+const newObj = copy(obj);
+obj.a = 1000;
+newObj.c["k"] = 1e9;
+console.log(newObj);
+console.log(obj);
+
+//Деструктуризация объекта - извлеч. значений из объекта и присвоение переменным (независимо)
+let {a, c: {k}} = newObj;
+a = 2.2;
+k = 3e3;
+console.log(a, k);
+console.log(newObj);
+console.log(obj);
+
+const extra = {
+    changes: false,
+    isInteger: true,
+    d: 290,
+};
+
+//Копирование через Object.assign();
+const combine = Object.assign({}, newObj, extra);
+console.log(combine);
+combine.d = 1e7;
+combine.c.k = 1;
+console.log(combine);
+console.log(obj);
+console.log(newObj);
+console.log(extra);
+
+//Копирование массива через метод .slice();
+const oldArray = ["cayene 45", "gts900", "bonko s2", "powerRocket1000"]
+const newArray = oldArray.slice();
+
+newArray[2] = "bonko s3 SKYLINE";
+console.log(oldArray);
+console.log(newArray);
+
+//Копирование объектов и массивов с помощью Spread - оператора
+const testMergeObjects = { ...newObj, ...extra, ...person };
+console.log(testMergeObjects);
+testMergeObjects.pet = true;
+console.log(testMergeObjects);
+console.log(person);
+
+let video = ["youtube", "vimeo", "tiktok", "instagram"],
+    blogs = ["wordpress", "livejournal", "blogger"],
+    internet = [];
+internet = [...video, ...blogs, "facebook"];
+console.log(internet);
+
+// //полезно для React'а
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const dataServer = ["4543Gh", "hgj89jj", "44jkd00"];
+
+log(...dataServer);
+
+const copyObjCopy = {...newObj};
+console.log(copyObjCopy);
+copyObjCopy.c.k = 10090;
+copyObjCopy.a = 99221;
+console.log(copyObjCopy);
+console.log(newObj);
