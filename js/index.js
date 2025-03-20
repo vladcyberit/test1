@@ -652,9 +652,9 @@ function binary_search(DB, name1, name2) {
     return -1;
 }
 
-// binary_search(namesDB, prompt("Введите ваше полное имя", ""), prompt("Введите вашу фамилию", ""));
+// // binary_search(namesDB, prompt("Введите ваше полное имя", ""), prompt("Введите вашу фамилию", ""));
 
-console.log(Math.ceil(Math.log2(4e9)));
+// console.log(Math.ceil(Math.log2(4e9)));
 
 const obj = {
     a: 5,
@@ -751,3 +751,51 @@ copyObjCopy.c.k = 10090;
 copyObjCopy.a = 99221;
 console.log(copyObjCopy);
 console.log(newObj);
+
+//Тестовое задание по курсу по обьектам
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan) {
+        if (!plan?.age || !plan.skills?.languages) return "";
+        let { age } = plan;
+        let { skills: { languages } } = plan;
+        let modLangs = (languages.join(" ")).toUpperCase();
+        console.log(`Мне ${age} и я владею языками: ${modLangs}`);
+        return `Мне ${age} и я владею языками: ${modLangs}`;
+    },
+};
+
+function showExperience(plan) {
+    if (!plan.skills?.exp) return "";
+    let { skills: {exp} } = plan;
+    // let modExp = exp.slice(0,1);
+    // modExp += " месяц";
+    console.log(exp);
+    return exp;
+}
+showExperience(personalPlanPeter);
+
+function showProgrammingLangs(plan) {
+    if (!plan.skills?.programmingLangs) return "";
+    let languages = "";
+    let { skills: {programmingLangs}} = plan;
+
+    for (let key in programmingLangs) {
+        languages += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+    }
+    languages = languages.trim();
+    console.log(languages);
+    return languages;
+}
+showProgrammingLangs(personalPlanPeter);
+
+personalPlanPeter.showAgeAndLangs(personalPlanPeter);
