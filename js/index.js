@@ -799,3 +799,64 @@ function showProgrammingLangs(plan) {
 showProgrammingLangs(personalPlanPeter);
 
 personalPlanPeter.showAgeAndLangs(personalPlanPeter);
+
+//Тестовое задание по курсу по массивам
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+    let strFam = arr.join(" ").trim();
+
+    if (strFam) {
+        console.log(`Семья состоит из: ${strFam}`);
+        return `Семья состоит из: ${strFam}`;
+    } else {
+        console.log("Семья пуста");
+        return "Семья пуста";
+    }
+}
+showFamily(family);
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+    arr.forEach(function(item) {
+        let modItem = item.toLowerCase();
+        console.log(modItem);
+    });
+}
+standardizeStrings(favoriteCities);
+
+const someString = 'This is some strange string';
+
+function reverse(str) {
+    if (typeof str === "string") {
+        let arr = str.split('');
+        arr = (arr.reverse()).join("");
+        console.log(arr);
+        return arr;
+    } else {
+        console.log("Ошибка!");
+        return "Ошибка!";
+    }
+    
+}
+reverse(someString);
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+    if (arr.length === 0) return "Нет доступных валют";
+    let currAvailable = arr.slice();
+    let indxSearch = currAvailable.indexOf(missingCurr);
+
+    if (indxSearch !== -1) {
+        currAvailable.splice(indxSearch, 1);
+    }
+        
+    currAvailable = currAvailable.join("\n");
+    console.log(`Доступные валюты:\n${currAvailable}`);
+    return `Доступные валюты:\n${currAvailable}`;
+}
+availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
+
