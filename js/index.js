@@ -860,3 +860,50 @@ function availableCurr(arr, missingCurr) {
 }
 availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
 
+//OOP Basics
+const carSedan = {
+    wheels: 26,
+    type: "sedan",
+    options: "AI drive assistant",
+    color: "white",
+    onboardComputer: function(model) {
+        if (parseInt(model.replace(/\D/g, "")) >= 458) {
+            console.log(`Sedan ${model} has built-in on-board computer with AI assistant v4.0.1 Alpha and 4xWR Climate Control`);
+        } else {
+            console.log(`Sedan ${model} has built-in on-board computer with AI assistant v3.0.11.7`);
+        }
+    }
+};
+
+// const carLT457 = {
+//     model: "LT457",
+//     color: "deep ocean",
+// };
+
+// carSedan.onboardComputer(carLT457.model);
+
+// //Old way of creating prototypes
+// carLT457.__proto__ = carSedan;
+// console.log(carLT457.wheels);
+
+// for (let key in carLT457) {
+//     console.log(`${key}: ${carLT457[key]}`);
+// }
+
+// //NEW way of creating prototypes
+// Object.setPrototypeOf(carLT457, carSedan);
+// for (let key in carLT457) {
+//     console.log(`${key}: ${carLT457[key]}`);
+// }
+
+const carLT460 = Object.create(carSedan, {
+    model: { value: "LT460", enumerable: true },
+    color: { value: "deep blue", enumerable: true },
+    price: { value: `${1e5}$`, enumerable: true },
+});
+carSedan.onboardComputer(carLT460.model);
+
+for (let key in carLT460) {
+    console.log(`${key}: ${carLT460[key]}`);
+}
+
