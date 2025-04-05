@@ -862,7 +862,7 @@ availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
 
 //OOP Basics
 const carSedan = {
-    wheels: 26,
+    wheels: "26 inches",
     type: "sedan",
     options: "AI drive assistant",
     color: "white",
@@ -907,3 +907,75 @@ for (let key in carLT460) {
     console.log(`${key}: ${carLT460[key]}`);
 }
 
+//Advanced practical tasks on working with arrays and objects
+const shoppingMallData = {
+    shops: [
+        {
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 50000,
+}
+
+function isBudgetEnough(data) {
+    let totalArea = 0;
+
+    data.shops.forEach((shop) => {
+        totalArea += shop.length * shop.width;
+    });
+    let totalVolume = totalArea * data.height;
+    let totalBudget = totalVolume * data.moneyPer1m3;
+    if (totalBudget <= data.budget) {
+        console.log("Бюджета достаточно");
+        return "Бюджета достаточно";
+    } else {
+        console.log("Бюджета недостаточно");
+        return "Бюджета недостаточно";
+    }
+}
+
+isBudgetEnough(shoppingMallData);
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+const students1 = [
+    "Alice Johnson", "Bob Smith", "Charlie Brown", "David White", "Eve Davis", "Frank Harris", 
+    "Grace Lewis", "Hannah Clark", "Ivy Walker", "Jack King", "Karen Scott", "Leo Young", 
+    "Mona Hill", "Nathan Green", "Olivia Adams", "Paul Nelson", "Quincy Baker", "Rachel Martinez", 
+    "Steve Carter", "Tina Mitchell", "Uma Turner", "Vince Perez", "Walter Collins", "Xena Torres", 
+    "Yasmine Evans", "Zachary Morgan", "Abigail Taylor", "Benjamin Lee", "Catherine Hall", 
+    "Daniel Gonzalez", "Emily Rodriguez", "Freddy Gonzalez", "Georgia Lopez", "Henry Allen", 
+    "Isabelle Carter", "James King", "Kelly Harris", "Liam Robinson", "Monica Campbell", "Nina Parker"
+];
+
+function sortStudentsByGroups(arr) {
+    let sortedArr = [];
+    let newArr = [];
+    arr.sort();
+
+    while (arr.length >= 3) {
+        sortedArr = arr.splice(0, 3);
+        newArr.push(sortedArr);
+    }
+
+    newArr.push(`Оставшиеся студенты: ${(arr.length > 0) ? arr.join(", ") : "-"}`);
+
+    console.log(`У нас есть ${newArr.length - 1} команд:\n`, newArr);
+    return newArr;
+}
+
+sortStudentsByGroups(students1);
