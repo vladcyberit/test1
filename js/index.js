@@ -979,3 +979,35 @@ function sortStudentsByGroups(arr) {
 }
 
 sortStudentsByGroups(students1);
+
+//Dynamic typing in JS
+// // to String
+const num = 4;
+console.log(typeof(String(num)));
+console.log(typeof(num + ""));
+
+// // to Number
+const dogYears = "20";
+console.log(typeof(Number(dogYears)));
+console.log(typeof(+dogYears));
+console.log(typeof(parseInt("26px", 10)));
+
+// // to Boolean
+
+// 0, "", null, undefined, NaN = false
+
+let themeSwitcher = 1;
+
+function Switcher(value) {
+    if (value) {
+        console.log("Light theme");
+    } else {
+        console.log("Dark theme");
+    }
+}
+Switcher(themeSwitcher);
+themeSwitcher = 0;
+Switcher(themeSwitcher);
+
+console.log(typeof(Boolean(themeSwitcher)));
+console.log(typeof(!!themeSwitcher));
