@@ -1011,3 +1011,54 @@ Switcher(themeSwitcher);
 
 console.log(typeof(Boolean(themeSwitcher)));
 console.log(typeof(!!themeSwitcher));
+
+// Lexical environment
+
+let numLex = 5; debugger;
+
+function logNumber() {
+    let numLex = 4; debugger;
+    console.log(numLex);
+}
+
+numLex = 6;
+
+logNumber(); debugger;
+
+numLex = 10;
+
+logNumber(); debugger;
+
+function createCounter() {
+    let counter = 0; debugger;
+
+    const myFunction = function() {
+        counter++;
+        return counter; debugger;
+    }
+
+    return myFunction; debugger;
+}
+
+const increment = createCounter(); debugger;
+const secondInc = createCounter();
+
+// console.log(increment());
+// console.log(increment());
+// console.log(increment());
+// console.log(increment());
+// console.log(increment());
+
+//OR
+const c1 = increment(), 
+    c2 = increment(),
+    c3 = increment(),
+    c4 = increment(),
+    c5 = increment(),
+    b6 = increment(); debugger;
+
+console.log(c1, c2, c3, c4, c5, b6, secondInc(), increment(), secondInc()); debugger;
+
+const teddy = ["Ted", "Teddik"];
+const [, first] = teddy;
+console.log(first);
