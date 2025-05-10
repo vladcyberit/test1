@@ -1062,3 +1062,72 @@ console.log(c1, c2, c3, c4, c5, b6, secondInc(), increment(), secondInc()); debu
 const teddy = ["Ted", "Teddik"];
 const [, first] = teddy;
 console.log(first);
+
+// Tasks
+
+let y = 1;
+let x = y = 2;
+console.log(x);
+console.log( "1"[0] );
+console.log( Boolean("") );
+console.log(Boolean(true - null));
+console.log(Boolean([ ] + false - null + true));
+
+console.log([ ] + 1 + 2);
+console.log( null || 2 && 3 || 4 );
+console.log(typeof(+"dog"));
+
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '9$'
+        },
+        {
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
+        }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+};
+
+function isOpen(prop) {
+    let answer = '';
+    prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+    return answer;
+}
+
+console.log(isOpen(restorantData.openNow))
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+    if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) {
+        return 'Цена ниже средней';
+    } else {
+        return 'Цена выше средней';
+    }
+}
+
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+function transferWaitors(data) {
+    const copy = Object.assign({}, data);
+    copy.waitors = [...data.waitors];
+
+    copy.waitors[0] = {name: 'Mike', age: 32};
+    return copy;
+}
+
+transferWaitors(restorantData);
