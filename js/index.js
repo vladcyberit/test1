@@ -1143,12 +1143,71 @@ console.log(btns[0]);
 const circles = document.getElementsByClassName("circle");
 console.log(circles);
 
-const hearts = document.querySelectorAll(".heart");
+const wrapper = document.querySelector(".wrapper");
+
+const hearts = wrapper.querySelectorAll(".heart");
 console.log(hearts);
 
 hearts.forEach(item => {
     console.log(item);
 });
 
-const oneHeart = document.querySelector(".heart");
+const oneHeart = wrapper.querySelector(".heart");
 console.log(oneHeart);
+
+// Interacting with elements on page
+
+box.style.backgroundColor = "blue";
+box.style.width = "200px";
+
+const boxHeight = 200 / 2;
+box.style.cssText = `background-color: green; height: ${boxHeight}px;`;
+
+console.dir(btns[0]);
+
+btns[0].style.borderRadius = "50px";
+btns[0].style.cssText += "background-color: lightgrey;"
+
+// // Loops for interacting with the group of elements
+
+// for (let i = 0; i < btns.length; i++) {
+//     btns[i].style.cssText = "background-color: darkgrey; font-weight: 700; font-size: 16px; border-radius: 50px";
+// }
+
+hearts.forEach(item => {
+    item.style.cssText = "background-color: grey;";
+});
+
+// // Methods to interact with elements on page
+// // // new methods
+
+const div = document.createElement("div");
+
+// const text = document.createTextNode("Это тестовый текст!");
+
+div.classList.add("black");
+
+wrapper.append(div);
+// OR
+// document.querySelector(".wrapper").append(div);
+
+// wrapper.prepend(circles[0]);
+// hearts[2].before(div);
+// hearts[2].after(div);
+// btns[4].remove();
+// btns[3].replaceWith(hearts[0]);
+
+// // // old methods
+
+// wrapper.appendChild(div);
+// wrapper.insertBefore(div, hearts[2]);
+// wrapper.removeChild(hearts[1]);
+// document.body.replaceChild(div, btns[0]);
+
+// // // modifying an HTML element
+
+div.innerHTML = "<h2>Hello World!</h2>";
+// div.innerHTML = "<div> <button>1</button> <button>2</button> <button>3</button> <button>4</button> <button>5</button> </div>";
+// div.textContent = "Hello!";
+
+div.insertAdjacentHTML("beforeend", "<h1>А это H1 заголовок</h1>");
