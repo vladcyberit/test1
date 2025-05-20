@@ -1210,4 +1210,77 @@ div.innerHTML = "<h2>Hello World!</h2>";
 // div.innerHTML = "<div> <button>1</button> <button>2</button> <button>3</button> <button>4</button> <button>5</button> </div>";
 // div.textContent = "Hello!";
 
-div.insertAdjacentHTML("beforeend", "<h1>А это H1 заголовок</h1>");
+hearts[2].insertAdjacentHTML("afterend", "<h1>А это H1 заголовок</h1>");
+
+// Event handling
+
+// btns[0].onclick = function() {
+//     alert("Хочешь свежих начосов?");
+// };
+
+// btns[0].addEventListener('click', (event) => {
+//     event.target.style.backgroundColor = "green";
+// });
+
+ 
+// btns[0].addEventListener('click', () => {
+//     btns[0].insertAdjacentHTML('afterend', '<h1>mouse is here!</h1>');
+// });
+
+// // project of an interactive button that changes bg color
+
+// let clickCounter = 5;
+// const randomColorPicker = (min, max) => {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// };
+
+// const changeColorGreen = (event) => {
+//     clickCounter--;
+//     event.target.style.backgroundColor = `hsl(${randomColorPicker(1, 360)} ${randomColorPicker(1, 100)}% ${randomColorPicker(1, 100)}%)`;
+
+//     (clickCounter == 0) && btns[0].removeEventListener('click', changeColorGreen);
+// };
+
+// btns[0].textContent = "Draw me!";
+// btns[0].style.cssText += "font-size: 20px; font-weight: 500; width: 200px; height: 50px;";
+// btns[0].addEventListener('click', changeColorGreen);
+
+// btns[0].removeEventListener('click', changeColorGreen);
+
+// // Event bubbling
+
+// const overlay = document.querySelector(".overlay");
+
+// const overlayFnc = (event) => {
+//     console.log(event. currentTarget);
+//     console.log(event.type);
+// };
+// btns[0].addEventListener('dblclick', overlayFnc);
+// overlay.addEventListener('dblclick', overlayFnc);
+
+// // Canceling default action in JS 
+
+// wrapper.insertAdjacentHTML("afterend", "<a href ='https://code.mu/ru/javascript/manual/array/splice/'>https://code.mu/</a>");
+// const link = document.querySelector("a");
+
+// const linkMod = (event) => {
+//     event.preventDefault();
+//     console.log("Ты нажал!");
+// };
+
+// link.insertAdjacentHTML("afterend", `
+//         <form id="myForm">
+//             <input type="text" placeholder="Ваше имя"/>
+//             <button type="submit">Отправить</button>
+//         </form>
+//     `);
+
+// const form = document.querySelector("#myForm");
+// form.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     const input = form.querySelector("input");
+//     console.log(input.value);
+// });
+
+// // options in addEventListener();
+// link.addEventListener('click', linkMod, {once: true});
