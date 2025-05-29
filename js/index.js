@@ -1284,3 +1284,33 @@ hearts[2].insertAdjacentHTML("afterend", "<h1>А это H1 заголовок</h
 
 // // options in addEventListener();
 // link.addEventListener('click', linkMod, {once: true});
+
+// Nav through DOM elements, data-attributes, for/of
+
+
+console.log(document.documentElement);
+
+console.log(document.body.childNodes);
+
+console.log(wrapper.firstChild);
+
+console.log(hearts[0].parentNode.parentNode);
+
+console.log(btns[3].dataset.role);
+
+btns[3].dataset.role = "waiter";
+
+console.log(btns[3].dataset.role);
+
+console.log(btns[3].nextSibling);
+
+console.log(btns[3].previousElementSibling);
+
+console.log(wrapper.childNodes);
+for (let node of wrapper.childNodes) {
+    if (node.nodeType !== 1) continue;
+    console.log(node);
+}
+
+let filterArr = Array.from(wrapper.childNodes).filter(node => node.nodeType === 1);
+console.log(filterArr);
