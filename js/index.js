@@ -1014,50 +1014,50 @@ console.log(typeof(!!themeSwitcher));
 
 // Lexical environment
 
-let numLex = 5; debugger;
+// let numLex = 5; debugger;
 
-function logNumber() {
-    let numLex = 4; debugger;
-    console.log(numLex);
-}
+// function logNumber() {
+//     let numLex = 4; debugger;
+//     console.log(numLex);
+// }
 
-numLex = 6;
+// numLex = 6;
 
-logNumber(); debugger;
+// logNumber(); debugger;
 
-numLex = 10;
+// numLex = 10;
 
-logNumber(); debugger;
+// logNumber(); debugger;
 
-function createCounter() {
-    let counter = 0; debugger;
+// function createCounter() {
+//     let counter = 0; debugger;
 
-    const myFunction = function() {
-        counter++;
-        return counter; debugger;
-    }
+//     const myFunction = function() {
+//         counter++;
+//         return counter; debugger;
+//     }
 
-    return myFunction; debugger;
-}
+//     return myFunction; debugger;
+// }
 
-const increment = createCounter(); debugger;
-const secondInc = createCounter();
+// const increment = createCounter(); debugger;
+// const secondInc = createCounter();
 
-// console.log(increment());
-// console.log(increment());
-// console.log(increment());
-// console.log(increment());
-// console.log(increment());
+// // console.log(increment());
+// // console.log(increment());
+// // console.log(increment());
+// // console.log(increment());
+// // console.log(increment());
 
-//OR
-const c1 = increment(), 
-    c2 = increment(),
-    c3 = increment(),
-    c4 = increment(),
-    c5 = increment(),
-    b6 = increment(); debugger;
+// //OR
+// const c1 = increment(), 
+//     c2 = increment(),
+//     c3 = increment(),
+//     c4 = increment(),
+//     c5 = increment(),
+//     b6 = increment(); debugger;
 
-console.log(c1, c2, c3, c4, c5, b6, secondInc(), increment(), secondInc()); debugger;
+// console.log(c1, c2, c3, c4, c5, b6, secondInc(), increment(), secondInc()); debugger;
 
 const teddy = ["Ted", "Teddik"];
 const [, first] = teddy;
@@ -1314,3 +1314,116 @@ for (let node of wrapper.childNodes) {
 
 let filterArr = Array.from(wrapper.childNodes).filter(node => node.nodeType === 1);
 console.log(filterArr);
+
+// Recursion in JS
+
+function powFN(x, n) {
+    let result = 1;
+
+    for (let i = 0; i < n; i++) {
+        result *= x;
+    }
+
+    return result;
+}
+
+console.log(powFN(2, 8));
+
+function powFR(x, n) { debugger;
+    if (n === 1) { debugger;
+        return x; debugger;
+    } else { debugger;
+        return x * powFR(x, n - 1); debugger;
+    } debugger;
+}
+
+console.log(powFR(2, 8));
+
+let studentAcademy = {
+    js: [{
+        name: "john",
+        progress: 100
+    }, {
+        name: "ivan",
+        progress: 60
+    }],
+
+    html: {
+        basic: [{
+            name: "peter",
+            progress: 20
+        }, {
+            name: "bill",
+            progress: 18
+        }],
+
+        pro: [{
+            name: "sam",
+            progress: 10
+        }],
+
+        semi: {
+            students: [{
+                name: "tim",
+                progress: 90
+            }, {
+                name: "bill",
+                progress: 100
+            }],
+        }
+    }
+};
+
+function getTotalProgressByIt(data) {
+    let students = 0;
+    let total = 0;
+    
+    for (let course of Object.values(data)) {
+        if (Array.isArray(course)) {
+            students += course.length;
+            
+            course.forEach(item => {
+                total += item.progress;
+            });
+        } else {
+            for (let subCourse of Object.values(course)) {
+                students += subCourse.length;
+
+                subCourse.forEach(item => {
+                    total += item.progress;
+                });
+            }
+        }
+    }
+
+    return total / students;
+}
+
+// console.log(getTotalProgressByIt(studentAcademy));
+
+
+
+function getTotalProgressByRecursion(data) {
+    if (Array.isArray(data)) {
+        let total = 0;
+        
+        data.forEach(item => {
+            total += item.progress;
+        });
+
+        return [total, data.length];
+    } else {
+        let total = [0, 0];
+
+        for (let subData of Object.values(data)) {
+            const subDataArr = getTotalProgressByRecursion(subData);
+            total[0] += subDataArr[0];
+            total[1] += subDataArr[1];
+        }
+        return total;
+    }
+}
+
+const result = getTotalProgressByRecursion(studentAcademy);
+
+console.log(result[0] / result[1]);
