@@ -1427,3 +1427,19 @@ function getTotalProgressByRecursion(data) {
 const result = getTotalProgressByRecursion(studentAcademy);
 
 console.log(result[0] / result[1]);
+
+// Task on recursion in JS
+
+function factorial(n) {
+    if (n < 0 || !Number.isFinite(n) || !Number.isInteger(n)) {
+        return "Вы ввели неправильное значение!";
+    }
+
+    if (n === 0) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+console.log(factorial(6));
